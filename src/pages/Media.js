@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { getMedias } from "../services/api";
 
@@ -19,32 +20,47 @@ function Media() {
 
   return (
     <div className="container mt-4">
-      <h2>🎬 Lista de Medias</h2>
+      <h2 className="mb-4 text-center">🎬 Catálogo de Películas</h2>
 
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Año</th>
-            <th>Género</th>
-            <th>Director</th>
-            <th>Productora</th>
-            <th>Tipo</th>
-          </tr>
-        </thead>
-        <tbody>
-          {medias.map((m) => (
-            <tr key={m._id}>
-              <td>{m.titulo}</td>
-              <td>{m.anioEstreno}</td>
-              <td>{m.genero?.nombre}</td>
-              <td>{m.director?.nombre}</td>
-              <td>{m.productora?.nombre}</td>
-              <td>{m.tipo?.nombre}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="row">
+        {medias.map((m) => (
+          <div className="col-md-4 mb-4" key={m._id}>
+            <div className="card shadow h-100">
+              
+              <img
+                src={m.imagen || "https://via.placeholder.com/300x200"}
+                className="card-img-top"
+                alt={m.titulo}
+              />
+
+              <div className="card-body">
+                <h5 className="card-title">{m.titulo}</h5>
+                <p className="card-text">{m.sinopsis}</p>
+
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">
+                    🎭 {m.genero?.nombre}
+                  </li>
+                  <li className="list-group-item">
+                    🎬 {m.director?.nombre}
+                  </li>
+                  <li className="list-group-item">
+                    🏢 {m.productora?.nombre}
+                  </li>
+                  <li className="list-group-item">
+                    📺 {m.tipo?.nombre}
+                  </li>
+                </ul>
+              </div>
+
+              <div className="card-footer text-muted">
+                📅 {m.anioEstreno}
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
