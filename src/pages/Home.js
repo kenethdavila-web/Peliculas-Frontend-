@@ -6,23 +6,23 @@ function Home() {
     <div
       style={{
         background: `
-          linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4)),
+          linear-gradient(to top, rgba(43, 42, 42, 0.9), rgba(0,0,0,0.4)),
           url(${fondo})
         `,
-        backgroundSize: "contain", // 🔥 evita zoom exagerado
+        backgroundSize: "contain", 
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundColor: "black",
-        height: "210vh",
+        height: "140vh",
         color: "white",
       }}
       className="d-flex justify-content-center align-items-center"
     >
       <div
         style={{
-          backgroundColor: "rgba(0,0,0,0.6)",
-          padding: "120px",
-          borderRadius: "85px",
+          backgroundColor: "rgba(12, 6, 6, 0.6)239, 0.6)",
+          padding: "60px",
+          borderRadius: "65px",
           textAlign: "center",
           animation: "fadeIn 1.5s ease-in-out",
           backdropFilter: "blur(5px)", // 🔥 efecto vidrio
