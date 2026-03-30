@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="footer text-center">
       <p>🎬 MoviesApp © 2026</p>
-      <p>Desarrollado por Keneth Davila</p>
+      <p>Desarrollado por Ingeniería Web 2</p>
 
       <style>
         {`

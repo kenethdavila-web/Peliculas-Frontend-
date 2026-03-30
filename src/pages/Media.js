@@ -58,7 +58,11 @@ function Media() {
   e.preventDefault();
 
   const dataToSend = {
+    serial: form.serial,
     titulo: form.titulo,
+    sinopsis:form.sinopsis,
+    url: form.url,
+    imagen: form.imagen,
     anioEstreno: Number(form.anioEstreno),
     genero: form.genero,
     director: form.director,
@@ -93,7 +97,7 @@ function Media() {
 
    } catch (error) {
     console.error("ERROR COMPLETO:", error.response?.data);
-    alert("Error al crear ❌");
+    alert("Error al crear Media ❌");
    }
   };
 
