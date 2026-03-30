@@ -20,7 +20,11 @@ function Media() {
   const [tipos, setTipos] = useState([]);
 
   const [form, setForm] = useState({
+    serial: "",
     titulo: "",
+    sinopsis: "",
+    url: "",
+    imagen: "",
     anioEstreno: "",
     genero: "",
     director: "",
@@ -51,17 +55,33 @@ function Media() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
+  const dataToSend = {
+    titulo: form.titulo,
+    anioEstreno: Number(form.anioEstreno),
+    genero: form.genero,
+    director: form.director,
+    productora: form.productora,
+    tipo: form.tipo,
+  };
+
+  console.log("ENVIANDO:", dataToSend);
+
+  try {
     if (editingId) {
-      await updateMedia(editingId, form);
+      await updateMedia(editingId, dataToSend);
       setEditingId(null);
     } else {
-      await createMedia(form);
+      await createMedia(dataToSend);
     }
 
     setForm({
+      serial: "",
       titulo: "",
+      sinopsis: "",
+      url: "",
+      imagen: "",
       anioEstreno: "",
       genero: "",
       director: "",
@@ -70,11 +90,20 @@ function Media() {
     });
 
     cargarTodo();
+
+   } catch (error) {
+    console.error("ERROR COMPLETO:", error.response?.data);
+    alert("Error al crear ❌");
+   }
   };
 
   const handleEdit = (m) => {
     setForm({
+      serial: m.serial,
       titulo: m.titulo,
+      sinopsis: m.sinopsis,
+      url: m.url,
+      imagen: m.imagen,
       anioEstreno: m.anioEstreno,
       genero: m.genero?._id,
       director: m.director?._id,
@@ -107,13 +136,33 @@ function Media() {
         />
 
         <input
+         type="number"
           className="form-control mb-2"
           placeholder="Año"
-          value={form.anioEstreno}
-          onChange={(e) =>
-            setForm({ ...form, anioEstreno: e.target.value })
+         value={form.anioEstreno}
+         onChange={(e) =>
+            setForm({ ...form, anioEstreno: Number(e.target.value) })
           }
         />
+
+        <input
+          className="form-control mb-2"
+         placeholder="Serial"
+         value={form.serial || ""}
+         onChange={(e) =>
+           setForm({ ...form, serial: e.target.value })
+          }
+        />
+
+        <input
+         className="form-control mb-2"
+         placeholder="URL"
+         value={form.url || ""}
+         onChange={(e) =>
+           setForm({ ...form, url: e.target.value })
+          }
+        />
+
 
         {/* SELECT GENERO */}
         <select
@@ -192,7 +241,9 @@ function Media() {
             <th>Año</th>
             <th>Género</th>
             <th>Director</th>
+            <th>Tipo</th>
             <th>Acciones</th>
+            
           </tr>
         </thead>
 
@@ -203,6 +254,7 @@ function Media() {
               <td>{m.anioEstreno}</td>
               <td>{m.genero?.nombre}</td>
               <td>{m.director?.nombre}</td>
+              <td>{m.tipo?.nombre}</td>
 
               <td>
                 <button
