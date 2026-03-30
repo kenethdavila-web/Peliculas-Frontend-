@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const API = axios.create({
-  baseURL: "https://ingenier-a-web-2-movies.onrender.com/api"
+  baseURL: "https://ingenier-a-web-2-movies.onrender.com"
 });
 
 // =======================
