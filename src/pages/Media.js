@@ -126,6 +126,15 @@ function Media() {
       {/* FORMULARIO */}
       <form onSubmit={handleSubmit} className="mb-4">
 
+         <input
+          className="form-control mb-2"
+         placeholder="Serial"
+         value={form.serial || ""}
+         onChange={(e) =>
+           setForm({ ...form, serial: e.target.value })
+          }
+        />
+
         <input
           className="form-control mb-2"
           placeholder="Título"
@@ -135,22 +144,12 @@ function Media() {
           }
         />
 
-        <input
-         type="number"
-          className="form-control mb-2"
-          placeholder="Año"
-         value={form.anioEstreno}
+        <textarea
+         className="form-control mb-2"
+         placeholder="Sinopsis"
+         value={form.sinopsis || ""}
          onChange={(e) =>
-            setForm({ ...form, anioEstreno: Number(e.target.value) })
-          }
-        />
-
-        <input
-          className="form-control mb-2"
-         placeholder="Serial"
-         value={form.serial || ""}
-         onChange={(e) =>
-           setForm({ ...form, serial: e.target.value })
+           setForm({ ...form, sinopsis: e.target.value })
           }
         />
 
@@ -162,6 +161,42 @@ function Media() {
            setForm({ ...form, url: e.target.value })
           }
         />
+        <input
+         type="text"
+         className="form-control mb-2"
+         placeholder="URL de la imagen"
+         value={form.imagen || ""}
+         onChange={(e) =>
+           setForm({ ...form, imagen: e.target.value })
+          }
+        />
+
+         {form.imagen && (
+           <div className="mb-3 text-center">
+             <img
+               src={form.imagen}
+               alt="preview"
+               style={{
+                 width: "150px",
+                 borderRadius: "10px",
+                 boxShadow: "0 0 10px rgba(0,0,0,0.5)"
+                }}
+              />
+           </div>
+          )}
+
+
+        <input
+         type="number"
+          className="form-control mb-2"
+          placeholder="Año"
+         value={form.anioEstreno}
+         onChange={(e) =>
+            setForm({ ...form, anioEstreno: Number(e.target.value) })
+          }
+        />
+
+        
 
 
         {/* SELECT GENERO */}
