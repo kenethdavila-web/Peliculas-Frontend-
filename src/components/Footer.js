@@ -28,14 +28,29 @@ function Footer() {
 
         {/* REDES */}
         <div className="mb-3">
-          <a href="#" className="social">
-            🌐 Facebook {" "}
+          <a
+            href="https://www.facebook.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🌐 Facebook{" "}
           </a>
-          <a href="#" className="social">
-            📱 WhatsApp {" "}
+          <a
+            href="https://www.whatsapp.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📱 WhatsApp{" "}
           </a>
-          <a href="#" className="social">
-            📸 Instagram {" "}
+          <a
+            href="https://www.instagram.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📸 Instagram{" "}
           </a>
         </div>
 
