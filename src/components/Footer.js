@@ -1,25 +1,99 @@
 function Footer() {
   return (
     <footer className="footer text-center">
-      <p>🎬 MoviesApp © 2026</p>
-      <p>Desarrollado por Ingeniería Web 2</p>
+      <div className="container">
+        <h5 className="mb-3">🎬 MoviesApp</h5>
+
+        {/* LINKS */}
+        <div className="mb-3">
+          <a href="/" className="footer-link">
+            Inicio
+          </a>
+          <a href="/media" className="footer-link">
+            Media
+          </a>
+          <a href="/generos" className="footer-link">
+            Géneros
+          </a>
+          <a href="/directores" className="footer-link">
+            Directores
+          </a>
+          <a href="/productoras" className="footer-link">
+            Productoras
+          </a>
+          <a href="/tipos" className="footer-link">
+            Tipos
+          </a>
+        </div>
+
+        {/* REDES */}
+        <div className="mb-3">
+          <a
+            href="https://www.facebook.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🌐 Facebook{" "}
+          </a>
+          <a
+            href="https://www.whatsapp.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📱 WhatsApp{" "}
+          </a>
+          <a
+            href="https://www.instagram.com"
+            className="social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📸 Instagram{" "}
+          </a>
+        </div>
+
+        <p>© 2026 MoviesApp</p>
+        <p>Desarrollado por Ingeniería Web 2</p>
+      </div>
 
       <style>
         {`
           .footer {
-            background-color: #111;
+            background: #000;
             color: #aaa;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid #222;
           }
 
-          .footer p {
-            margin: 5px 0;
+          .footer-link {
+            color: #aaa;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: 0.3s;
+          }
+
+          .footer-link:hover {
+            color: #e50914;
+          }
+
+          .social {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+          }
+
+          .social:hover {
+            color: #e50914;
+            transform: scale(1.2);
           }
 
           .footer:hover {
             color: white;
-            transition: 0.3s;
           }
         `}
       </style>
