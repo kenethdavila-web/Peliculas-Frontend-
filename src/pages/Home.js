@@ -9,7 +9,7 @@ function Home() {
           linear-gradient(to top, rgba(43, 42, 42, 0.9), rgba(0,0,0,0.4)),
           url(${fondo})
         `,
-        backgroundSize: "contain", 
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundColor: "black",
