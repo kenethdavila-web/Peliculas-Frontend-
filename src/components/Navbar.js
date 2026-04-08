@@ -55,9 +55,7 @@ function Navbar() {
             background: rgba(10, 9, 9, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px rgba(7, 7, 7, 0.7);
-<<<<<<< HEAD
             padding: 1px 0;
-
           }
 
           .logo {
