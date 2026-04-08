@@ -57,9 +57,7 @@ function Navbar() {
             box-shadow: 0 2px 15px rgba(7, 7, 7, 0.7);
 <<<<<<< HEAD
             padding: 1px 0;
-=======
-            padding: 1px 0;
->>>>>>> a0f5b32b3ed871ee0792e3b96f688d939026d547
+
           }
 
           .logo {
